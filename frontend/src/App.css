@@ -12,12 +12,12 @@ body.dark-mode {
 }
 
 body.light-mode {
-  background-color: #f0f2f5;
+  background-color: #a4a4a4;
   color: #000;
 }
 
 .App {
-  max-width: 800px;
+  max-width: 1200px; /* Adjust this value to change the width */
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -81,7 +81,7 @@ button {
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #4CAF50;
+  background-color: #00ff08;
   color: white;
   border: none;
   border-radius: 5px;
@@ -98,7 +98,7 @@ button.light-mode {
 }
 
 button.dark-mode {
-  background-color: lightgreen;
+  background-color: rgb(0, 255, 0);
   color: black;
 }
 
@@ -154,3 +154,10 @@ li p.dark {
 li p.light {
   color: #666;
 }
+
+/* Remove hover and click effects from IconButton */
+.MuiIconButton-root:hover,
+.MuiIconButton-root:active {
+  background-color: transparent !important;
+}
+

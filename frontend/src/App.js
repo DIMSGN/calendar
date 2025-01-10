@@ -16,6 +16,7 @@ function App() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+  const [language, setLanguage] = useState('en'); // Add language state
 
   const fetchEvents = async () => {
     try {
@@ -68,17 +69,16 @@ function App() {
         marginLeft: '35%', /* Adjust margin to account for the sidebar */
         backgroundColor: darkMode ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)', 
         color: darkMode ? 'white' : 'black', 
-        minHeight: '100vh' 
+        minHeight: '100vh', 
+        display: 'flex', 
+        flexDirection: 'column' 
       }}>
-        <IconButton
+<IconButton
           onClick={toggleDarkMode}
           color="inherit"
           style={{ marginBottom: '20px' }}
           sx={{
-            color: darkMode ? 'orange' : 'inherit',
-            border: '1px solid',
-            borderColor: darkMode ? 'black' : 'black',
-            borderRadius: '50%',
+            color: darkMode ? 'orange' : 'inherit'
           }}
         >
           {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
@@ -86,7 +86,7 @@ function App() {
         <h1 style={{ color: darkMode ? 'white' : 'black' }}>Calendar App <CalendarTodayIcon /> </h1>
         <Routes>
           <Route path="/" element={
-            <div>
+            <div style={{ flex: 1 }}>
               <h2 style={{ color: darkMode ? 'white' : 'black' }}>Create New Event</h2>
               <form onSubmit={(e) => {
                 e.preventDefault();
@@ -123,8 +123,11 @@ function App() {
               </div>
             </div>
           } />
-          <Route path="/settings" element={<Settings darkMode={darkMode} />} />
+          <Route path="/settings" element={<Settings darkMode={darkMode} toggleDarkMode={toggleDarkMode} language={language} setLanguage={setLanguage} />} />
         </Routes>
+        <footer style={{ textAlign: 'center', padding: '10px 0', color: darkMode ? 'white' : 'black', marginTop: 'auto' }}>
+          © 2025 All rights reserved
+        </footer>
       </div>
     </ThemeProvider>
   );
