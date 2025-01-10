@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-image 0.3s, color 0.3s;
+}
+
+.light-mode {
+  background: url('../public/lighter-background.jpg');
+  background-size: 50% 50%; /* Scale the image to half its size */
+  background-repeat: repeat; /* Repeat the image */
+  background-attachment: fixed;
+  color: black;
+}
+
+.dark-mode {
+  background: url('../public/dark-background.jpg');
+  background-size: 50% 50%; /* Scale the image to half its size */
+  background-repeat: repeat; /* Repeat the image */
+  background-attachment: fixed;
+  color: white;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

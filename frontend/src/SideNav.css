@@ -1,0 +1,66 @@
+.side-nav {
+  width: 300px; /* Extend the width of the sidebar */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 40px; /* Add padding from the top */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays on top */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s; /* Smooth transition */
+  transform: translateX(-100%); /* Hide by default */
+}
+
+.side-nav.visible {
+  transform: translateX(0); /* Show when visible */
+}
+
+.side-nav.light {
+  background-color: white;
+  color: black;
+}
+
+.side-nav.dark {
+  background-color: #333;
+  color: white; /* Make the text white in dark mode */
+}
+
+.side-nav ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.side-nav ul li {
+  width: 100%;
+  margin-bottom: 20px; /* Add more space between items */
+}
+
+.side-nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px; /* Increase padding for larger buttons */
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold; /* Make the text bold */
+  font-size: 1.2rem; /* Increase font size */
+  transition: background-color 0.3s;
+}
+
+.side-nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.side-nav ul li a .icon {
+  margin-right: 15px; /* Increase space between icon and text */
+  font-size: 1.5rem; /* Increase icon size */
+}
+
+.side-nav ul li a .text {
+  flex: 1;
+  font-size: 1.2rem; /* Increase text size */
+}
